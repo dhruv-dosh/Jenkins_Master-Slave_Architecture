@@ -152,12 +152,6 @@ sudo cat ~/.ssh/github-deploy
 ## Step 5: Setup Declarative Pipeline
 Follow this guide to setup Project in Jenkins Master using Declarative Pipeline: [Jenkins_Declarative_Pipeline_Setup](https://github.com/dhruv-dosh/Jenkins_Declarative_Pipeline_Setup)
 
-### NOTE:
-- Use git repo link while setting Jenkins as if your repo is private:
-```bash
-git@github.com:dhruv-dosh/Jenkins_Master_Slave.git
-```
-
 ## Author
 Dhruv Doshi
 

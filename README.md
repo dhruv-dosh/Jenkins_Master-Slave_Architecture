@@ -87,7 +87,7 @@ sudo systemctl restart jenkins
      - **Username**: `username` (**NOTE:** username can be found using **whoami** command) (EC2 default username = ubuntu) 
      - **Private Key**: Paste the private key of slave from `-----BEGIN OPENSSH PRIVATE KEY-----` to `-----END OPENSSH PRIVATE KEY-----`.
        
-## 2. Configure SSH Keys
+### Configure SSH Keys
 Generate and configure SSH keys for secure authentication on your instance.
 
 Command to generate secret key:
@@ -132,7 +132,7 @@ Command to see private key:
 sudo cat ~/.ssh/github-deploy 
 ```
 
-## 3. Configure GitHub SSH Key
+### Configure GitHub SSH Key
 1. Go to **GitHub → Settings → SSH and GPG keys → New SSH key**.
 2. Enter a title (e.g., `jenkins-master`).
 3. Key Type: `Authentication Key`.

@@ -17,7 +17,7 @@ To obtain the ed25519 private and public key of the Jenkins-master instance,
 
 ### 1. **Generate SSH Key on Jenkins Master**
 ```bash
-ssh-keygen -t ed25519 -C "abhishek25022004@gmail.com"
+ssh-keygen -t ed25519 -C "dhruvdoshi.pvt@gmail.com"
 ```
 ### 2. **Create SSH Folder**
 ```bash

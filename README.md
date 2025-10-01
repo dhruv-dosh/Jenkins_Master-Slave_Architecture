@@ -155,3 +155,12 @@ Follow this guide to setup Project in Jenkins Master using Declarative Pipeline:
 ## Author
 Dhruv Doshi
 
+*For In Depth MySQL DataBase Notes [MySQL](https://github.com/dhruv-dosh/MySQL_Relational_Database_Notes)*
+ 
+ *For In Depth Java Notes [Java_Notes](https://github.com/dhruv-dosh/Java_In_Depth_Notes)*
+ 
+ *For Learning Spring Boot [Spring boot](https://github.com/dhruv-dosh/Spring_Java_Framework)*
+ 
+ *For Learning Docker [Docker](https://github.com/dhruv-dosh/Docker_Notes_And_Commands)*
+
+*Created and maintained by [dhruv-doshi](https://github.com/dhruv-dosh)*

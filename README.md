@@ -85,7 +85,59 @@ sudo systemctl restart jenkins
      - **ID**: `master-slave`
      - **Description**: `This is private key of slave.`
      - **Username**: `username` (**NOTE:** username can be found using **whoami** command) (EC2 default username = ubuntu) 
-     - **Private Key**: Paste the private key of slave from `-----BEGIN OPENSSH PRIVATE KEY-----` to `-----END OPENSSH PRIVATE KEY-----`. (Refer to **Step 2** of the guide: [Node_Todo_App_Docker_Jenkins_FreeStyle](https://github.com/Abhishek-2502/Node_Todo_App_Docker_Jenkins_FreeStyle))
+     - **Private Key**: Paste the private key of slave from `-----BEGIN OPENSSH PRIVATE KEY-----` to `-----END OPENSSH PRIVATE KEY-----`.
+       
+## 2. Configure SSH Keys
+Generate and configure SSH keys for secure authentication on your instance.
+
+Command to generate secret key:
+```bash
+sudo ssh-keygen -t rsa -b 4096 -f ~/.ssh/github-deploy
+```
+
+Command to add keys in Known Hosts: (If you want to access Github)
+```bash
+ssh-keyscan github.com >> ~/.ssh/known_hosts
+```
+
+Check ownership of the key file:
+```bash
+ls -l ~/.ssh/github-deploy
+```
+
+If the owner is root, change it to the current user (Current user can be found using **whoami** command)
+```bash
+sudo chown username:username ~/.ssh/github-deploy
+```
+
+Command to give permissions:
+```bash
+sudo chmod 600 ~/.ssh/authorized_keys
+sudo chmod 600 ~/.ssh/github-deploy
+sudo chmod 644 ~/.ssh/known_hosts
+```
+
+Command for passwordless SSH login or deploy keys for GitHub, CI/CD, or remote servers typically for jenkins-master.
+```bash
+sudo cat ~/.ssh/github-deploy.pub >> ~/.ssh/authorized_keys 
+```
+
+Command to see public key:
+```bash
+sudo cat ~/.ssh/github-deploy.pub  
+```
+
+Command to see private key:
+```bash
+sudo cat ~/.ssh/github-deploy 
+```
+
+## 3. Configure GitHub SSH Key
+1. Go to **GitHub → Settings → SSH and GPG keys → New SSH key**.
+2. Enter a title (e.g., `jenkins-master`).
+3. Key Type: `Authentication Key`.
+4. Paste the public key in key section.
+
 
 ### Security and Availability:
 - **Host Key Verification Strategy**: `Non verifying Verification Strategy`
@@ -98,14 +150,14 @@ sudo systemctl restart jenkins
 4. Run a test job on the slave node to verify the connection.
 
 ## Step 5: Setup Declarative Pipeline
-Follow this guide to setup Project in Jenkins Master using Declarative Pipeline: [Django_Notes_App_Docker_Jenkins_Declarative](https://github.com/Abhishek-2502/Django_Notes_App_Docker_Jenkins_Declarative)
+Follow this guide to setup Project in Jenkins Master using Declarative Pipeline: [Jenkins_Declarative_Pipeline_Setup](https://github.com/dhruv-dosh/Jenkins_Declarative_Pipeline_Setup)
 
 ### NOTE:
 - Use git repo link while setting Jenkins as if your repo is private:
 ```bash
-git@github.com:Abhishek-2502/Jenkins_Master_Slave.git
+git@github.com:dhruv-dosh/Jenkins_Master_Slave.git
 ```
 
 ## Author
-Abhishek Rajput
+Dhruv Doshi
 
